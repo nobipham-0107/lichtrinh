@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lịch trình</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Lịch trình</h1>
+    <div class="controls">
+      <button id="prevBtn">‹</button>
+      <button id="todayBtn">Hôm nay</button>
+      <button id="nextBtn">›</button>
+      <button id="viewToggle">Tuần</button>
+      <button id="addEventBtn" class="primary">+ Thêm sự kiện</button>
+      <button id="themeToggle" title="Chuyển đổi giao diện sáng/tối">🌓</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="dateLabel" class="date-label"></div>
+    <div id="weekView" class="calendar week-view">
+      <div id="weekCalendar"></div>
+    </div>
+    <div id="dayView" class="calendar day-view hidden">
+      <div class="day-timeline">
+        <div class="timeline-header"></div>
+        <div id="dayCalendar"></div>
+      </div>
+      <div class="day-agenda">
+        <h2>Lịch trình trong ngày</h2>
+        <div id="dayAgenda"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <h2 id="modalTitle">Thêm sự kiện</h2>
+      <form id="eventForm">
+        <label>Tiêu đề
+          <input type="text" id="title" required maxlength="100" />
+        </label>
+        <label>Ngày
+          <input type="date" id="date" required />
+        </label>
+        <label>Bắt đầu
+          <input type="time" id="start" required />
+        </label>
+        <label>Kết thúc
+          <input type="time" id="end" required />
+        </label>
+        <div class="form-actions">
+          <button type="button" id="deleteBtn" class="danger hidden">Xóa</button>
+          <div style="flex:1"></div>
+          <button type="button" id="cancelBtn">Hủy</button>
+          <button type="submit" class="primary">Lưu</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
